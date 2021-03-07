@@ -178,7 +178,7 @@ const Channel = () => {
 
           {!profile.isMe && profile.isSubscribed && (
             <Button grey onClick={() => handleUnsubscribe(profile.id)}>
-              Subscribed
+              Unsubscribe
             </Button>
           )}
 

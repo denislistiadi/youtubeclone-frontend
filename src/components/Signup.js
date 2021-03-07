@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import styled from "styled-components";
 import useInput from "../hooks/useInput";
 import { signup } from "../reducers/user";
+import loader from '../assets/loader.png';
 
 export const StyledAuth = styled.div`
   width: 385px;
@@ -11,6 +12,29 @@ export const StyledAuth = styled.div`
   background: ${(props) => props.theme.grey};
   border-radius: 4px;
   margin: 8% auto;
+
+  .head {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+  img {
+    height: 70px;
+
+    @media (max-width: 430px) {
+      height: 50px;
+    }
+  }
+  
+  h1 {
+    margin-left: 1rem;
+    
+    @media (max-width: 430px) {
+      margin-left: 0.5rem;
+      font-size: 1.6rem;
+    }
+  }
 
   h2 {
     margin-bottom: 1.3rem;
@@ -121,6 +145,10 @@ const Signup = ({ setAuth }) => {
 
   return (
     <StyledAuth>
+      <div className="head">
+        <img src={loader} alt="logo"/>
+        <h1>YT Clone</h1>
+      </div>
       <h2>Create your account</h2>
       <form onSubmit={handleSubmit}>
         <div className="input-group">

@@ -4,6 +4,7 @@ import { toast } from "react-toastify";
 import { StyledAuth } from "./Signup";
 import useInput from "../hooks/useInput";
 import { login } from "../reducers/user";
+import loader from '../assets/loader.png';
 
 const Login = ({ setAuth }) => {
   const dispatch = useDispatch();
@@ -33,7 +34,11 @@ const Login = ({ setAuth }) => {
 
   return (
     <StyledAuth>
-      <h2>Login to your account</h2>
+      <div className="head">
+        <img src={loader} alt="logo"/>
+        <h1>YT Clone</h1>
+      </div>
+        <h2>Login to your account</h2>
       <form onSubmit={handleLogin}>
         <input
           type="email"

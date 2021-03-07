@@ -7,6 +7,7 @@ import UploadVideo from "./UploadVideo";
 import Avatar from "../styles/Avatar";
 import { HamburgerIcon, NotificationIcon } from "./Icons";
 import { openSidebar, closeSidebar } from "../reducers/sidebar";
+import loader from '../assets/loader.png';
 
 const Wrapper = styled.div`
   position: fixed;
@@ -20,6 +21,10 @@ const Wrapper = styled.div`
   z-index: 99;
   padding: 0.7rem 1.5rem;
 
+  img {
+    height: 25px;
+  }
+
   input {
     width: 500px;
   }
@@ -30,7 +35,12 @@ const Wrapper = styled.div`
 
   .logo span {
     position: relative;
-    top: 1px;
+    top: -2px;
+    font-size: 1rem;
+  }
+
+  .logo span img {
+    top: 7px;
   }
 
   ul {
@@ -102,7 +112,9 @@ const Navbar = () => {
           onClick={handleToggleSidebar}
         />
         <span>
-          <Link to="/">YouTube Clone</Link>
+          <Link to="/">
+            <img src={loader} alt="logo"/>YT Clone
+          </Link>
         </span>
       </div>
 
